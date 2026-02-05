@@ -8,50 +8,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)</title>
-  <meta name="description" content="Staking Polygon (POL) guide (2026): how Polygon staking works, rewards and real yield, APY vs APR, how to stake step-by-step, validator list criteria, minimum POL, calculator framework, best practices, risks, safety checks, comparisons vs liquid staking, and troubleshooting. Includes KPIs, runbook, and a deep FAQ.">
+  <title>Lido Staking — stETH, wstETH, Rewards, APY/APR, Fees, Withdrawals, Risks &amp; Troubleshooting (2026)</title>
+  <meta name="description" content="Lido Staking guide (2026): how Lido works, stETH vs wstETH, real rewards and yield drivers, APY vs APR, fees, how to stake ETH step-by-step, how withdrawals/unstaking works, where stETH trades, top token pairs, safety checklist, risks (smart contract, peg, liquidity), analytics dashboards, and troubleshooting. Includes KPIs, runbook, and a deep FAQ.">
   <meta name="author" content="Crypto Finance Experts">
-  <link rel="canonical" href="https://staking-polygon.example.com/">
+  <link rel="canonical" href="REPLACE_CANONICAL" />
 
   <!-- Favicon (use your local file) -->
-  <link rel="icon" type="image/png" href="polygon-logo-png_seeklogo-527156.png">
+  <link rel="icon" type="image/png" href="68384064.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://staking-polygon.example.com/">
-  <meta property="og:title" content="Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)">
-  <meta property="og:description" content="Practical Staking Polygon (POL) guide: rewards, APY/APR, validator selection, safety checklist, calculator framework, and troubleshooting.">
-  <meta property="og:image" content="cover.png">
+  <meta property="og:url" content="REPLACE_CANONICAL">
+  <meta property="og:title" content="Lido Staking — stETH, wstETH, Rewards, Fees, Withdrawals &amp; Safety (2026)">
+  <meta property="og:description" content="Practical Lido Staking (2026): stake ETH for stETH, understand wstETH, fees, withdrawals, risks, best practices, and troubleshooting.">
+  <meta property="og:image" content="lidost.png">
 
   <!-- Twitter Card -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://staking-polygon.example.com/">
-  <meta property="twitter:title" content="Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)">
-  <meta property="twitter:description" content="Deep Polygon staking guide: yield drivers, validator criteria, minimum POL, best practices, and risks in 2025–2026.">
-  <meta property="twitter:image" content="cover.png">
+  <meta property="twitter:url" content="REPLACE_CANONICAL">
+  <meta property="twitter:title" content="Lido Staking — stETH / wstETH Guide, Rewards, Fees &amp; Withdrawals (2026)">
+  <meta property="twitter:description" content="Deep Lido guide: how staking works, stETH vs wstETH, real yield drivers, withdrawal flow, risks, and troubleshooting in 2025–2026.">
+  <meta property="twitter:image" content="lidost.png">
 
   <style>
     :root{
-      /* Black–Purple Theme */
-      --primary:#A855F7;       /* purple-500 */
-      --primary-600:#9333EA;   /* purple-600 */
-      --primary-700:#7E22CE;   /* purple-700 */
-      --accent:#22D3EE;        /* cyan accent for tiny highlights */
+      /* Light Powder Theme (Lido-style) */
+      --primary:#D977A8;        /* rose-pink */
+      --primary-600:#C45E94;
+      --primary-700:#A84C7E;
+      --accent:#38BDF8;         /* soft blue accent */
 
-      --ink:#F8FAFC;           /* near-white text */
-      --muted:#A1A1AA;         /* zinc-400 */
-      --muted-2:#71717A;       /* zinc-500 */
+      --ink:#1F1B24;            /* deep ink */
+      --muted:#3B3340;          /* warm slate */
+      --muted-2:#6B5E70;        /* softer */
 
-      --bg:#070712;            /* deep black/purple */
-      --panel:#0B0B18;
-      --panel-2:#0F0F24;
-      --line:rgba(255,255,255,.10);
+      --bg:#FFF7FB;             /* powder background */
+      --panel:#FFFFFF;
+      --panel-2:#FFF0F7;
+      --line:rgba(31,27,36,.12);
 
-      --ok:#22C55E;
-      --warn:#F59E0B;
-      --error:#EF4444;
+      --ok:#16A34A;
+      --warn:#D97706;
+      --error:#DC2626;
 
-      --shadow: 0 18px 44px rgba(0,0,0,.55);
+      --shadow: 0 18px 44px rgba(31,27,36,.10);
       --radius:14px;
       --radius-sm:10px;
       --radius-lg:22px;
@@ -66,16 +66,16 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
       color:var(--muted);
       background:
-        radial-gradient(900px 600px at 15% 0%, rgba(168,85,247,.22), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(34,211,238,.10), transparent 60%),
-        radial-gradient(900px 600px at 55% 85%, rgba(126,34,206,.16), transparent 60%),
-        linear-gradient(180deg, #050510 0%, #070712 45%, #050510 100%);
+        radial-gradient(900px 600px at 12% 0%, rgba(217,119,168,.18), transparent 60%),
+        radial-gradient(900px 600px at 92% 10%, rgba(56,189,248,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 90%, rgba(168,76,126,.12), transparent 60%),
+        linear-gradient(180deg, #FFF7FB 0%, #FFF2F8 45%, #FFF7FB 100%);
       line-height:1.65;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
 
-    a{color:var(--primary); text-decoration:none}
+    a{color:var(--primary-700); text-decoration:none}
     a:hover{text-decoration:underline}
 
     img{max-width:100%; height:auto; display:block}
@@ -93,19 +93,19 @@
       padding-top:.6rem;
       border-top:1px solid var(--line);
     }
-    h3{font-size:clamp(1.05rem,2.2vw,1.3rem); color:#EDE9FE}
+    h3{font-size:clamp(1.05rem,2.2vw,1.3rem); color:#5B1D3B}
 
     p,li,td,th{font-size:1rem}
-    .lead{font-size:1.125rem; color:#E5E7EB}
+    .lead{font-size:1.125rem; color:#241C2A}
     .muted{color:var(--muted)}
     .muted-2{color:var(--muted-2)}
 
     header.hero{
       padding: clamp(2rem,6vw,4rem) 0;
       background:
-        radial-gradient(700px 420px at 18% 10%, rgba(168,85,247,.25), transparent 60%),
-        radial-gradient(700px 420px at 90% 20%, rgba(34,211,238,.12), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0) 55%);
+        radial-gradient(700px 420px at 18% 10%, rgba(217,119,168,.18), transparent 60%),
+        radial-gradient(700px 420px at 90% 20%, rgba(56,189,248,.10), transparent 60%),
+        linear-gradient(180deg, rgba(31,27,36,.03), rgba(31,27,36,0) 55%);
       border-bottom:1px solid var(--line);
     }
 
@@ -117,7 +117,7 @@
     }
 
     .hero-card{
-      background: linear-gradient(180deg, rgba(15,15,36,.82), rgba(11,11,24,.68));
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,240,247,.86));
       border:1px solid var(--line);
       border-radius:var(--radius-lg);
       padding:clamp(1rem,3vw,1.75rem);
@@ -131,10 +131,10 @@
       height:54px;
       border-radius:14px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
+      background:rgba(217,119,168,.10);
       padding:.35rem;
       object-fit:contain;
-      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+      box-shadow: 0 10px 22px rgba(31,27,36,.10);
       flex:0 0 auto;
     }
 
@@ -147,8 +147,8 @@
       border-radius:12px;
       font-weight:900;
       letter-spacing:.2px;
-      box-shadow:0 14px 32px rgba(168,85,247,.28);
-      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 14px 32px rgba(217,119,168,.22);
+      border:1px solid rgba(31,27,36,.06);
     }
     .cta:hover{filter:brightness(1.05); text-decoration:none}
     .cta.secondary{
@@ -162,9 +162,9 @@
     .note{
       border-left:3px solid var(--primary);
       padding:.75rem 1rem;
-      background:rgba(168,85,247,.10);
+      background:rgba(217,119,168,.08);
       border-radius:10px;
-      color:#E5E7EB;
+      color:#241C2A;
     }
 
     .hero-media{
@@ -181,7 +181,7 @@
       max-height:520px;
       border-radius:var(--radius-lg);
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.92);
       box-shadow:var(--shadow);
       padding:.25rem;
     }
@@ -200,7 +200,7 @@
       max-height:420px;
       border-radius:var(--radius);
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.92);
       box-shadow:var(--shadow);
       padding:.25rem;
     }
@@ -208,31 +208,31 @@
     section.step-guide{padding: clamp(2rem,6vw,3.5rem) 0}
     .steps{display:grid; gap:var(--gap); grid-template-columns:1fr;}
     .step{
-      background:linear-gradient(180deg, rgba(15,15,36,.78), rgba(11,11,24,.62));
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,240,247,.86));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.2rem;
-      box-shadow: 0 12px 26px rgba(0,0,0,.45);
+      box-shadow: 0 12px 26px rgba(31,27,36,.08);
       transition:transform .2s ease, box-shadow .2s ease;
     }
-    .step:hover{transform:translateY(-4px); box-shadow:0 18px 34px rgba(0,0,0,.55)}
+    .step:hover{transform:translateY(-4px); box-shadow:0 18px 34px rgba(31,27,36,.10)}
     .step .icon{
       width:54px;height:54px;border-radius:50%;
       display:inline-grid; place-items:center;
-      background:rgba(168,85,247,.18);
+      background:rgba(56,189,248,.12);
       margin-bottom:.6rem;
-      color:#EDE9FE;
+      color:#114B68;
       font-weight:950;
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(31,27,36,.08);
     }
 
     main .card{
-      background:linear-gradient(180deg, rgba(15,15,36,.70), rgba(11,11,24,.58));
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,240,247,.86));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.25rem;
       margin:1.25rem 0;
-      box-shadow: 0 12px 26px rgba(0,0,0,.45);
+      box-shadow: 0 12px 26px rgba(31,27,36,.08);
     }
 
     .grid-2{display:grid; gap:var(--gap); grid-template-columns:1fr;}
@@ -242,43 +242,43 @@
     }
     .pill{
       border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
+      background:rgba(217,119,168,.06);
       padding:.4rem .65rem;
       border-radius:999px;
       font-weight:800;
-      color:#E5E7EB;
+      color:#241C2A;
       box-shadow:none;
     }
 
     .toc{
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(168,85,247,.10), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(217,119,168,.08), rgba(255,255,255,.88));
       border-radius:var(--radius);
       padding:1rem;
     }
-    .toc strong{color:#F1F5F9}
+    .toc strong{color:#1F1B24}
     .toc ul{margin:.5rem 0 0; padding-left:1.1rem}
     .toc li{margin:.25rem 0}
-    .toc a{font-weight:800}
+    .toc a{font-weight:900}
 
     table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px}
     th,td{padding:.9rem; border-bottom:1px solid var(--line)}
     th{
-      background:rgba(168,85,247,.10);
-      color:#F8FAFC;
+      background:rgba(56,189,248,.10);
+      color:#1F1B24;
       text-align:left
     }
-    tr.highlight{background:rgba(168,85,247,.08)}
-    tr:hover{background:rgba(255,255,255,.03)}
+    tr.highlight{background:rgba(217,119,168,.06)}
+    tr:hover{background:rgba(31,27,36,.02)}
 
     .ok{color:var(--ok)} .warn{color:var(--warn)} .err{color:var(--error)}
 
     .eeat{
-      background:linear-gradient(180deg, rgba(168,85,247,.10), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(217,119,168,.08), rgba(255,255,255,.88));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.25rem;
-      box-shadow: 0 12px 26px rgba(0,0,0,.45);
+      box-shadow: 0 12px 26px rgba(31,27,36,.08);
     }
 
     .faq-item{border-bottom:1px solid var(--line); padding: .9rem 0}
@@ -290,7 +290,7 @@
     .faq-button h3{margin:0; font-weight:950}
     .faq-content{max-height:0; overflow:hidden; transition:max-height .25s ease}
     .faq-content.open{padding-top:.6rem}
-    .faq-plus{font-weight:950; color:#EDE9FE}
+    .faq-plus{font-weight:950; color:#5B1D3B}
 
     .cta-center{
       display:flex;
@@ -305,11 +305,11 @@
     }
     .badge{
       border:1px solid var(--line);
-      background:rgba(34,211,238,.06);
+      background:rgba(56,189,248,.12);
       padding:.35rem .6rem;
       border-radius:999px;
       font-weight:900;
-      color:#E5E7EB;
+      color:#1F1B24;
     }
 
     .callout-grid{
@@ -319,7 +319,7 @@
       margin-top: .75rem;
     }
     .mini{
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.88);
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1rem;
@@ -329,14 +329,23 @@
       display:flex; flex-wrap:wrap; gap:.55rem; margin-top:.5rem;
     }
     .kpi-badges span{
-      border:1px solid rgba(168,85,247,.22);
-      background:rgba(168,85,247,.07);
-      color:#EDE9FE;
+      border:1px solid rgba(217,119,168,.22);
+      background:rgba(217,119,168,.08);
+      color:#1F1B24;
       padding:.3rem .55rem;
       border-radius:999px;
       font-weight:900;
       font-size:.9rem;
     }
+
+    .callout{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.82);
+      border-radius:var(--radius);
+      padding:1rem;
+      margin:1rem 0;
+    }
+    .callout strong{color:#1F1B24}
 
     @media (min-width: 860px){
       .hero-grid{grid-template-columns: 1fr;}
@@ -353,72 +362,81 @@
   <div class="container hero-grid">
     <div class="hero-card" aria-label="Intro">
       <div class="brand-row">
-        <img class="brand-logo" src="polygon-logo-png_seeklogo-527156.png" alt="Staking Polygon logo">
+        <img class="brand-logo" src="68384064.png" alt="Lido Staking logo">
         <div>
           <div class="muted" style="font-weight:900; letter-spacing:.2px;">Operational Guide</div>
-          <div class="muted-2" style="font-size:.95rem;">Rewards • APY/APR • Validators • Calculator • Safety</div>
+          <div class="muted-2" style="font-size:.95rem;">stETH • wstETH • Rewards • Fees • Withdrawals • Safety</div>
         </div>
       </div>
 
-      <h1>Staking Polygon (POL)</h1>
+      <h1>Lido Staking</h1>
       <p class="lead">
-        This is a practical, security-first guide to <strong>Staking Polygon (POL)</strong>: how staking works end-to-end,
-        what drives rewards, how to compare <strong>APY vs APR</strong>, how to choose validators, how to estimate yield with
-        a calculator framework, and how to avoid the common mistakes that cause lost time (or lost funds).
+        This is a practical, safety-first guide to <strong>Lido Staking</strong> in 2026:
+        how staking ETH via Lido works, what you receive (<strong>stETH</strong>), when you should use <strong>wstETH</strong>,
+        how rewards accrue, what fees you really pay, how withdrawals/unstaking works, and how to avoid the mistakes
+        that cause bad swaps, approval risks, or “where did my stETH go?” confusion.
       </p>
 
-
       <div class="cta-center">
-        <a href="https://staking-polygon.com/" class="cta" aria-label="Open Polygon Staking (placeholder)">Open Polygon Staking</a>
+        <a href="https://lido.fi/" class="cta" aria-label="Open Lido (official)">Open Lido Staking</a>
       </div>
 
       <div class="note" style="margin-top:1rem;">
-        <strong>Quick rule:</strong> If you’re staking meaningful size, do a small test delegation first,
-        then scale in. Staking is operational: validator choice, unbonding rules, and wallet hygiene matter.
+        <strong>Quick rule:</strong> Lido is “easy” at the UI level, but your real risk is operational:
+        <strong>token type (stETH vs wstETH)</strong>, <strong>withdrawal expectations</strong>, <strong>approval hygiene</strong>,
+        and <strong>liquidity/peg conditions</strong> when you exit.
+      </div>
+
+      <div class="badge-row" aria-label="Key intents">
+        <span class="badge">stake ETH</span>
+        <span class="badge">stETH rewards</span>
+        <span class="badge">wstETH usage</span>
+        <span class="badge">withdraw / unstake</span>
+        <span class="badge">fees &amp; risks</span>
       </div>
     </div>
 
     <div class="hero-media" aria-hidden="true">
-      <!-- First top image -->
-      <img class="hero-img" src="snimok-ekrana-2022-01-25-v-16.10.24.png" alt="Staking Polygon overview visual">
+      <!-- Hero image -->
+      <img class="hero-img" src="lidost.png" alt="Lido Staking hero visual">
     </div>
   </div>
 </header>
 
 <section class="step-guide" aria-labelledby="how-works">
   <div class="container">
-    <h2 id="how-works">Staking Polygon (POL): How the Workflow Works (Choose → Delegate → Earn → Unstake)</h2>
+    <h2 id="how-works">Lido Staking: How the Workflow Works (Deposit → Receive stETH → Earn → Use/Exit)</h2>
     <div class="steps" role="list">
       <article class="step" role="listitem">
         <div class="icon">①</div>
-        <h3>Choose a staking method (native vs liquid staking)</h3>
+        <h3>Deposit ETH and receive stETH</h3>
         <p>
-          Decide if you want native delegation (more “direct”, but with lock/unbond rules) or liquid staking
-          (more flexibility, but extra smart-contract and peg/liquidity considerations).
+          You stake ETH via Lido’s app and receive <strong>stETH</strong>, which represents your staked position plus rewards.
+          <strong>stETH is liquid</strong> (tradable), but “liquid” does not mean “guaranteed 1:1 exit at all times.”
         </p>
       </article>
       <article class="step" role="listitem">
         <div class="icon">②</div>
-        <h3>Select validators (the real risk/return lever)</h3>
+        <h3>Decide if you need wstETH</h3>
         <p>
-          Your validator choice drives uptime risk, slashing exposure, commission drag, and reliability.
-          “Highest APY” is not a strategy if the operator is unstable or opaque.
+          Many DeFi apps prefer <strong>wstETH</strong> (wrapped stETH). Wrapping changes how balances are represented:
+          wstETH typically grows via its <em>exchange rate</em> rather than rebasing your balance.
         </p>
       </article>
       <article class="step" role="listitem">
         <div class="icon">③</div>
-        <h3>Delegate and track rewards (net yield matters)</h3>
+        <h3>Earn rewards (net of protocol fee)</h3>
         <p>
-          Rewards are not just “APR”: net yield depends on commission, compounding cadence, and any extra
-          fees/constraints. Track realized outcomes, not only quotes.
+          Rewards depend on Ethereum staking conditions. Your net yield is <strong>staking rewards − protocol fee − execution costs</strong>
+          (mainly when you trade/unwrap/withdraw).
         </p>
       </article>
       <article class="step" role="listitem">
         <div class="icon">④</div>
-        <h3>Unstake safely (timelines, claims, and mistakes)</h3>
+        <h3>Exit via withdraw or swap (choose wisely)</h3>
         <p>
-          The exit path is part of the plan: understand unbonding delays, claim steps, and how long capital is illiquid.
-          Most “stuck” issues come from missing exit steps or network mismatch.
+          Exiting can mean <strong>withdrawing</strong> (redeem) or <strong>swapping</strong> stETH/wstETH to ETH/stables.
+          Your best exit path depends on <strong>time sensitivity</strong>, <strong>liquidity</strong>, and <strong>peg conditions</strong>.
         </p>
       </article>
     </div>
@@ -428,90 +446,133 @@
 <main class="container" role="main">
 
   <section class="card toc" aria-label="Table of Contents">
-    <strong>On this page (Staking Polygon):</strong>
+    <strong>On this page (Lido Staking):</strong>
     <ul>
-      <li><a href="#overview">Staking Polygon overview (what it is &amp; who it’s for)</a></li>
-      <li><a href="#rewards">Polygon staking rewards: what drives yield</a></li>
-      <li><a href="#apy-apr">Polygon staking APY / APR: how to compare correctly</a></li>
-      <li><a href="#how-to">How to stake Polygon (POL): step-by-step tutorial</a></li>
-      <li><a href="#calculator">Polygon staking calculator: estimation framework</a></li>
-      <li><a href="#validators">Polygon validator list: selection checklist</a></li>
-      <li><a href="#minimum">Polygon staking minimum POL required</a></li>
-      <li><a href="#yield">Polygon staking yield: compounding &amp; net return</a></li>
-      <li><a href="#review">Staking Polygon review: legit, trust, and what to watch</a></li>
-      <li><a href="#safety">Is staking Polygon safe? risks &amp; rewards</a></li>
-      <li><a href="#comparison">Staking Polygon comparison vs liquid staking</a></li>
-      <li><a href="#best-practices">Best way to stake Polygon: best practices</a></li>
+      <li><a href="#overview">Lido Staking overview (what it is &amp; who it’s for)</a></li>
+      <li><a href="#steth-wsteth">stETH vs wstETH: what’s the difference?</a></li>
+      <li><a href="#rewards">Lido staking rewards: what drives yield</a></li>
+      <li><a href="#apy-apr">APY vs APR for Lido: how to compare correctly</a></li>
+      <li><a href="#fees">Lido fees explained (what you really pay)</a></li>
+      <li><a href="#how-to">How to stake ETH with Lido: step-by-step</a></li>
+      <li><a href="#pairs">Top token pairs: stETH / wstETH markets</a></li>
+      <li><a href="#withdrawals">Withdraw / unstake: how exits work</a></li>
+      <li><a href="#safety">Is Lido Staking safe? risk checklist</a></li>
+      <li><a href="#analytics">Dashboards &amp; analytics for Lido</a></li>
       <li><a href="#troubleshooting">Troubleshooting &amp; common issues</a></li>
-      <li><a href="#eeat">Sources &amp; references</a></li>
+      <li><a href="#eeat">Sources &amp; references (authoritative)</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
   </section>
 
   <section class="card" id="overview">
-    <h2>Staking Polygon Overview: What It Is, and Why People Stake POL</h2>
+    <h2>Lido Staking Overview: What It Is, and Why People Use It</h2>
     <p>
-      <strong>Staking Polygon (POL)</strong> generally means committing POL to help secure network operations (directly or via delegation),
-      earning rewards in return. The trade-off is simple: you exchange liquidity and operational attention
-      (validator selection + rules) for yield and network participation.
+      <strong>Lido Staking</strong> is a liquid staking approach that lets you stake ETH without running a validator.
+      Instead of locking ETH and waiting for a withdrawal, you receive <strong>stETH</strong> which can be held, traded,
+      or used in DeFi. This is popular for users who want staking exposure while keeping optional liquidity.
     </p>
 
     <div class="callout-grid" role="list">
       <div class="mini" role="listitem">
-        <h3>Best use-case</h3>
+        <h3>Best for</h3>
         <p class="muted">
-          Long-term holders who want yield and can tolerate lock/unbond timelines.
+          Long-term ETH holders who want staking rewards and also want the option to use collateral in DeFi.
         </p>
         <div class="kpi-badges">
-          <span>Long-term</span><span>Yield-focused</span><span>Risk-managed</span>
+          <span>Liquid staking</span><span>DeFi optionality</span><span>Non-custodial intent</span>
         </div>
       </div>
 
       <div class="mini" role="listitem">
         <h3>Main constraints</h3>
         <p class="muted">
-          Unbonding delay, validator/operator risk, and the need for careful wallet hygiene.
+          Smart-contract risk + liquidity/peg risk on exit if you swap stETH/wstETH during stressed markets.
         </p>
         <div class="kpi-badges">
-          <span>Illiquidity</span><span>Operator risk</span><span>Process matters</span>
+          <span>Contract risk</span><span>Peg/discount risk</span><span>Exit planning</span>
         </div>
       </div>
     </div>
 
     <div class="note" style="margin-top:1rem;">
-      <strong>Operational truth:</strong> the “best” staking setup is the one you can exit safely.
-      Always plan the unstake path before you stake.
+      <strong>Operational truth:</strong> “Stake ETH” is easy. The real skill is <strong>exiting cleanly</strong>:
+      know whether you’re withdrawing or swapping, and understand the token you’re holding.
     </div>
 
     <div class="content-media">
-      <!-- Second image -->
-      <img class="content-img" src="poly2.png" alt="Staking Polygon checklist visual">
+      <!-- One extra image (insert once as requested) -->
+      <img class="content-img" src="lido2.png" alt="Lido Staking overview visual">
+    </div>
+  </section>
+
+  <section class="card" id="steth-wsteth">
+    <h2>stETH vs wstETH: What’s the Difference (And Which One You Need)</h2>
+    <p>
+      Two of the most searched questions are <strong>“What is stETH?”</strong> and <strong>“What is wstETH?”</strong>.
+      Here’s the practical difference:
+    </p>
+
+    <table aria-label="stETH vs wstETH comparison">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>stETH</th>
+          <th>wstETH</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td>Balance behavior</td>
+          <td>Often represented as a <strong>rebasing</strong> balance (your balance can increase as rewards accrue)</td>
+          <td>Typically <strong>non-rebasing</strong>; value accrues via an <strong>exchange rate</strong></td>
+        </tr>
+        <tr>
+          <td>Best for</td>
+          <td>Simple holding; some integrations</td>
+          <td>DeFi apps that require non-rebasing collateral; L2 usage; lending/AMMs that prefer wrapped tokens</td>
+        </tr>
+        <tr>
+          <td>Common confusion</td>
+          <td>“My stETH amount changed”</td>
+          <td>“My wstETH amount didn’t change” (value changes via rate)</td>
+        </tr>
+        <tr>
+          <td>Action needed</td>
+          <td>None if you just hold</td>
+          <td>You may need to <strong>wrap/unwrap</strong> depending on the app</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <strong>Rule:</strong> If a DeFi app asks for wstETH, don’t force stETH. Wrap it properly and verify the contract and UI.
     </div>
   </section>
 
   <section class="card" id="rewards">
-    <h2>Polygon Staking Rewards: What Drives Rewards and Why They Change</h2>
+    <h2>Lido Staking Rewards: What Drives Yield (And Why It Changes)</h2>
     <p>
-      <strong>Polygon staking rewards</strong> vary over time. Your realized outcome depends on network conditions and
-      your validator’s behavior (commission, uptime, performance), plus how you compound.
+      <strong>Lido staking rewards</strong> are ultimately Ethereum staking rewards, net of Lido’s protocol economics.
+      Your realized yield depends on the network environment and operational factors.
     </p>
     <ul>
-      <li><strong>Validator commission:</strong> your rewards are reduced by the operator’s cut.</li>
-      <li><strong>Uptime/performance:</strong> instability reduces rewards and can increase risk.</li>
-      <li><strong>Compounding cadence:</strong> auto-compound vs manual compounding changes net APY.</li>
-      <li><strong>Operational fees:</strong> some paths require extra transactions (claim/compound/unstake).</li>
+      <li><strong>Ethereum staking rate:</strong> changes with total ETH staked and network conditions.</li>
+      <li><strong>Protocol fee:</strong> a portion of rewards goes to protocol actors (e.g., node operators, DAO treasury).</li>
+      <li><strong>Execution costs:</strong> gas for wrapping, swaps, withdrawals, and approvals (when you take actions).</li>
+      <li><strong>Exit method:</strong> swapping stETH can carry a discount/premium vs withdrawing over time.</li>
     </ul>
 
-    <div class="note">
-      <strong>Rule:</strong> Treat quoted yield as “gross”. Track net yield after commission + fees + missed time (downtime/unbond).
+    <div class="callout">
+      <strong>Reality:</strong> Your “headline APY” is not your net outcome if you pay high gas, trade during volatile/illiquid windows,
+      or exit via a stressed market swap.
     </div>
   </section>
 
   <section class="card" id="apy-apr">
-    <h2>Polygon Staking APY / APR: How to Compare Without Getting Tricked</h2>
+    <h2>Lido APY vs APR: How to Compare Without Getting Tricked</h2>
     <p>
-      <strong>APR</strong> is typically the “simple rate” (no compounding assumption).
-      <strong>APY</strong> includes a compounding assumption (and can be misleading if compounding isn’t realistic or fees are ignored).
+      People search <strong>Lido APY</strong> and <strong>Lido APR</strong> because yields are quoted in different ways.
+      Use this practical interpretation:
     </p>
 
     <table aria-label="APY vs APR comparison">
@@ -525,290 +586,261 @@
       <tbody>
         <tr class="highlight">
           <td>APR</td>
-          <td>Simple annual rate (no compounding)</td>
-          <td>Assuming APR = final outcome (it ignores compounding and fees)</td>
+          <td>Simple annual rate (no compounding assumption)</td>
+          <td>Assuming APR = realized returns (ignores timing and costs)</td>
         </tr>
         <tr>
           <td>APY</td>
-          <td>Annualized rate with compounding assumption</td>
-          <td>Believing APY without checking compounding frequency + transaction costs</td>
+          <td>Annualized rate including compounding effects</td>
+          <td>Believing APY without accounting for fees and exit method</td>
         </tr>
       </tbody>
     </table>
 
     <div class="note">
-      <strong>Quick check:</strong> If compounding requires frequent transactions, fees can erase the “APY gap” for small balances.
+      <strong>Quick check:</strong> If you actively swap/wrap/bridge, your net result depends as much on execution and fees as on yield.
+    </div>
+  </section>
+
+  <section class="card" id="fees">
+    <h2>Lido Fees Explained: What You Really Pay</h2>
+    <p>
+      When users ask <strong>“Lido fees”</strong>, they often mix three different costs:
+      protocol fee (taken from rewards), on-chain gas for actions, and market costs when swapping.
+    </p>
+
+    <table aria-label="Lido cost model">
+      <thead>
+        <tr>
+          <th>Cost line</th>
+          <th>Where it appears</th>
+          <th>How to reduce it</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td>Protocol fee (from rewards)</td>
+          <td>Net staking yield</td>
+          <td>Understand net rate; compare apples-to-apples with other options</td>
+        </tr>
+        <tr>
+          <td>Gas fees</td>
+          <td>Stake, wrap/unwrap, withdraw, approvals</td>
+          <td>Batch actions; avoid congestion; keep a gas buffer</td>
+        </tr>
+        <tr>
+          <td>Swap slippage / discount</td>
+          <td>Exiting via DEX/CEX markets</td>
+          <td>Use deep venues; split size; exit via withdraw if time allows</td>
+        </tr>
+        <tr>
+          <td>Approval risk (indirect cost)</td>
+          <td>Unlimited allowances exposure</td>
+          <td>Prefer limited approvals; revoke stale allowances</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <strong>Rule:</strong> The “cheapest” staking is the one you can exit safely and predictably. Treat exit mechanics as part of the fee model.
     </div>
   </section>
 
   <section class="card" id="how-to">
-    <h2>How to Stake Polygon (POL): Tutorial (Clean, Repeatable Workflow)</h2>
+    <h2>How to Stake ETH With Lido: Step-by-Step (Clean Workflow)</h2>
     <ol>
-      <li><strong>Choose your method:</strong> native staking vs liquid staking (based on your liquidity needs).</li>
-      <li><strong>Prepare wallet hygiene:</strong> verify official URLs, consider hardware wallet for size, keep backups safe.</li>
-      <li><strong>Pick a validator:</strong> assess commission, uptime history, transparency, and operational reputation.</li>
-      <li><strong>Delegate a small test:</strong> verify rewards accrual and that you understand the UI and steps.</li>
-      <li><strong>Scale in:</strong> add stake in tranches to reduce operational mistakes.</li>
-      <li><strong>Track + compound:</strong> decide if compounding is worth it after fees.</li>
-      <li><strong>Plan your exit:</strong> know unbonding/claim rules before you need liquidity.</li>
+      <li><strong>Use the official site:</strong> bookmark Lido’s URL and avoid look-alike domains.</li>
+      <li><strong>Connect wallet:</strong> consider a dedicated “interaction wallet” for dApps if size is meaningful.</li>
+      <li><strong>Choose stake amount:</strong> keep ETH for gas and recovery actions (don’t go all-in).</li>
+      <li><strong>Stake and receive stETH:</strong> confirm you received the correct token and contract on the right network.</li>
+      <li><strong>Decide on wstETH:</strong> wrap stETH only if your target DeFi app requires it.</li>
+      <li><strong>Track position:</strong> save tx hash and note whether you hold stETH or wstETH.</li>
+      <li><strong>Plan exit:</strong> decide whether you will withdraw (redeem) or swap (market exit) before you need liquidity.</li>
     </ol>
 
     <div class="note">
-      <strong>Best way to stake Polygon:</strong> stable operational setup beats chasing the highest headline number.
-      Reliability + sane commission + safe process wins.
+      <strong>Best practice:</strong> Treat staking like an operational strategy: record addresses, tx hashes, and exit rules.
+      “I’ll figure it out later” is how people lose money on swaps.
     </div>
   </section>
 
-  <section class="card" id="calculator">
-    <h2>Polygon Staking Calculator: A Practical Estimation Framework</h2>
+  <section class="card" id="pairs">
+    <h2>Top Token Pairs: Where stETH / wstETH Trade (Most Searched Markets)</h2>
     <p>
-      A <strong>Polygon staking calculator</strong> should estimate your <em>net</em> outcome (not just a marketing APY).
-      Use this framework:
+      Popular queries include <strong>“swap stETH to ETH”</strong>, <strong>“wstETH to ETH”</strong>, and <strong>“stETH to USDC”</strong>.
+      The most common markets are:
     </p>
 
-    <table aria-label="Staking calculator inputs">
+    <table aria-label="Common stETH and wstETH pairs">
       <thead>
         <tr>
-          <th>Input</th>
-          <th>Meaning</th>
-          <th>Why it matters</th>
+          <th>Pair</th>
+          <th>Why it’s popular</th>
+          <th>What to watch</th>
         </tr>
       </thead>
       <tbody>
         <tr class="highlight">
-          <td>Stake amount (POL)</td>
-          <td>Your principal</td>
-          <td>Determines if compounding fees are worth it</td>
+          <td><strong>ETH ↔ stETH</strong></td>
+          <td>Primary entry/exit intent</td>
+          <td>Discount/premium vs 1:1; liquidity depth; slippage on size</td>
         </tr>
         <tr>
-          <td>Gross APR</td>
-          <td>Network/validator rate before compounding</td>
-          <td>Baseline yield driver</td>
+          <td><strong>stETH ↔ wstETH</strong></td>
+          <td>DeFi integrations and collateral preferences</td>
+          <td>Use official wrappers; verify token contract and UI</td>
         </tr>
         <tr>
-          <td>Validator commission</td>
-          <td>Operator cut</td>
-          <td>Directly reduces rewards</td>
+          <td><strong>ETH ↔ wstETH</strong></td>
+          <td>Direct DeFi collateral usage</td>
+          <td>Route quality; compare venues; mind slippage</td>
         </tr>
         <tr>
-          <td>Compounding frequency</td>
-          <td>Monthly/weekly/daily (if applicable)</td>
-          <td>Increases APY but may increase fees</td>
+          <td><strong>stETH ↔ USDC / USDT / DAI</strong></td>
+          <td>Risk-off exits or collateral rotation</td>
+          <td>Stable liquidity varies by venue; check price impact; split trades</td>
         </tr>
         <tr>
-          <td>Tx costs</td>
-          <td>Claim/compound/unstake fees</td>
-          <td>Can dominate small portfolios</td>
+          <td><strong>wstETH ↔ USDC / ETH (L2s)</strong></td>
+          <td>L2 DeFi usage (chain-specific)</td>
+          <td>Bridge/chain correctness; contract verification; liquidity fragmentation</td>
         </tr>
       </tbody>
     </table>
 
-    <div class="note">
-      <strong>Calculator takeaway:</strong> For smaller balances, “set and forget” (no frequent compounding) often yields higher net results after fees.
+    <div class="callout">
+      <strong>Execution tip:</strong> For meaningful size, do a small test swap first and consider splitting into chunks.
+      Most “bad exits” happen when users force size through thin liquidity.
     </div>
   </section>
 
-  <section class="card" id="validators">
-    <h2>Polygon Validator List: How to Choose the Right Validator</h2>
+  <section class="card" id="withdrawals">
+    <h2>Withdraw / Unstake: How Exiting Lido Works (Two Paths)</h2>
     <p>
-      Instead of chasing “top APR”, evaluate validators like infrastructure providers.
-      A strong <strong>Polygon validator list</strong> checklist:
-    </p>
-    <ul>
-      <li><strong>Commission:</strong> reasonable and stable (avoid sudden spikes).</li>
-      <li><strong>Uptime &amp; reliability:</strong> consistent performance matters more than hype.</li>
-      <li><strong>Transparency:</strong> clear operator identity, documentation, and communication.</li>
-      <li><strong>Risk posture:</strong> sensible security practices and operational maturity.</li>
-    </ul>
-
-    <div class="note">
-      <strong>Heuristic:</strong> Pick validators you can explain in one sentence (who they are + why you trust their operations).
-    </div>
-  </section>
-
-  <section class="card" id="minimum">
-    <h2>Polygon Staking Minimum POL Required</h2>
-    <p>
-      The <strong>Polygon staking minimum POL required</strong> depends on the staking method and platform.
-      In practice, your “real minimum” is the amount where fees don’t crush net yield and you can still afford
-      exit transactions if needed.
-    </p>
-    <ul>
-      <li><strong>Hard minimum:</strong> varies by method/platform.</li>
-      <li><strong>Practical minimum:</strong> enough POL so periodic transactions (claim/compound/unstake) don’t eat yield.</li>
-      <li><strong>Safety minimum:</strong> keep extra for network fees and recovery actions.</li>
-    </ul>
-
-    <div class="note">
-      <strong>Rule:</strong> Always keep a gas buffer; being “all-in” is how people get stuck.
-    </div>
-  </section>
-
-  <section class="card" id="yield">
-    <h2>Polygon Staking Yield: How to Think About Net Returns</h2>
-    <p>
-      <strong>Polygon staking yield</strong> should be evaluated as <em>net</em> performance: rewards minus commissions minus fees,
-      adjusted for time locked/unbonded and any downtime.
+      “Unstaking” is often misunderstood. With Lido you typically have two exit paths:
     </p>
 
-    <h3>Net yield checklist</h3>
-    <ul>
-      <li>Gross rewards earned</li>
-      <li>Minus validator commission</li>
-      <li>Minus transaction costs (claim/compound/unstake)</li>
-      <li>Minus “lost time” (unbonding delays / operational downtime)</li>
-    </ul>
-
-    <div class="note">
-      <strong>Best practice:</strong> Track realized outcomes quarterly. If net yield is not beating your alternative (or risk feels wrong), rotate strategy.
-    </div>
-  </section>
-
-  <section class="card" id="review">
-    <h2>Staking Polygon Review: Legit, Trust, and What to Watch (2025–2026)</h2>
-    <p>
-      A <strong>Staking Polygon review</strong> should focus on predictable outcomes and safety:
-      whether the process is understandable, the validator ecosystem is mature, and the “gotchas” are manageable.
-    </p>
-
-    <div class="callout-grid">
+    <div class="grid-2">
       <div class="mini">
-        <h3>Staking Polygon legit?</h3>
+        <h3>Path A — Withdraw / redeem (time-based)</h3>
         <p class="muted">
-          Generally, staking as a mechanism is legitimate. Your real question is: <em>which method/provider</em> and
-          <em>which validator</em> are you trusting operationally.
+          You request withdrawal/redeem through the protocol’s withdrawal flow. This may involve a waiting period (queue)
+          depending on network conditions and protocol mechanics.
         </p>
+        <div class="kpi-badges">
+          <span>Predictable</span><span>Time delay</span><span>Less market slippage</span>
+        </div>
       </div>
+
       <div class="mini">
-        <h3>Staking Polygon trust</h3>
+        <h3>Path B — Swap (market-based)</h3>
         <p class="muted">
-          Trust is earned via transparency: clear docs, known operators, consistent performance, and a clean exit path.
+          You swap stETH/wstETH to ETH or stablecoins on DEXs/CEXs. This is faster but depends on liquidity and peg conditions.
         </p>
+        <div class="kpi-badges">
+          <span>Fast</span><span>Liquidity-dependent</span><span>Possible discount</span>
+        </div>
       </div>
     </div>
 
-    <div class="note">
-      <strong>2025 / 2026 lens:</strong> The market rewards operational discipline. Assume attackers target approvals, fake sites, and users rushing steps.
+    <div class="note" style="margin-top:1rem;">
+      <strong>Decision rule:</strong> If you can wait, withdrawing can reduce market execution risk.
+      If you need speed, swapping is fine—just treat it like a trade with slippage/discount risk.
     </div>
   </section>
 
   <section class="card" id="safety">
-    <h2>Staking Polygon Safe? Risks and Rewards (What Actually Matters)</h2>
-    <p>
-      “Safe” is not binary. <strong>Staking Polygon safe</strong> depends on method risk + validator/operator risk + user mistakes.
-      You can reduce risk dramatically with hygiene and conservative choices.
-    </p>
-
-    <h3>Key risks</h3>
+    <h2>Is Lido Staking Safe? Security Checklist (High-Impact)</h2>
     <ul>
-      <li><strong>Smart-contract risk:</strong> higher with extra layers (some liquid staking designs).</li>
-      <li><strong>Validator/operator risk:</strong> downtime, poor ops, slashing exposure.</li>
-      <li><strong>Phishing/approval risk:</strong> fake UIs and bad approvals are top avoidable loss sources.</li>
-      <li><strong>Liquidity risk:</strong> you may not be able to exit instantly (unbonding / market liquidity).</li>
+      <li><strong>Verify official URLs:</strong> use bookmarks; phishing is the #1 avoidable risk.</li>
+      <li><strong>Verify token contracts:</strong> stETH/wstETH tickers can be spoofed on some UIs.</li>
+      <li><strong>Limit approvals:</strong> avoid unlimited allowances on high-value wallets.</li>
+      <li><strong>Use wallet separation:</strong> one wallet for holding, one for interacting.</li>
+      <li><strong>Plan exits:</strong> understand withdraw vs swap and keep a gas buffer.</li>
+      <li><strong>Don’t chase APR:</strong> incentives and short-term spikes are not sustainable yield.</li>
     </ul>
 
     <div class="note">
-      <strong>Hard rule:</strong> Use bookmarks for official sites, prefer minimal approvals, and keep a separate wallet for “daily” dApp usage if you’re staking meaningful size.
+      <strong>Default setup:</strong> if the amount matters, treat every approval as “potential full-drain permission.”
+      Revoke stale allowances periodically.
     </div>
   </section>
 
-  <section class="card" id="comparison">
-    <h2>Staking Polygon Comparison: Native Staking vs Liquid Staking</h2>
+  <section class="card" id="analytics">
+    <h2>Lido Analytics: Dashboards, On-Chain Monitoring, and What to Track</h2>
     <p>
-      <strong>Staking Polygon vs liquid staking</strong> is a trade-off between simplicity and flexibility.
-      Choose based on your need for liquidity and your tolerance for extra smart-contract/market risks.
+      For serious staking, track measurable outcomes: your net ETH exposure, token type (stETH vs wstETH),
+      and your exit conditions. Useful tracking categories:
     </p>
-
-    <table aria-label="Native vs Liquid staking">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th>Native delegation</th>
-          <th>Liquid staking</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="highlight">
-          <td>Liquidity</td>
-          <td>Lower (unbonding delays)</td>
-          <td>Higher (tokenized position, depends on market)</td>
-        </tr>
-        <tr>
-          <td>Complexity</td>
-          <td>Lower</td>
-          <td>Higher (contracts + peg/liquidity)</td>
-        </tr>
-        <tr>
-          <td>Risk surface</td>
-          <td>Validator/operator + protocol rules</td>
-          <td>Native risks + smart-contract + market liquidity risks</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="note">
-      <strong>Decision rule:</strong> If you need quick exits, liquid staking can help—but treat it like an additional layer of risk.
-    </div>
-  </section>
-
-  <section class="card" id="best-practices">
-    <h2>Best Way to Stake Polygon: Best Practices (Simple, High-Impact)</h2>
     <ul>
-      <li><strong>Use a hardware wallet</strong> for meaningful amounts.</li>
-      <li><strong>Delegate in tranches</strong> (test small, then scale).</li>
-      <li><strong>Prefer reputable validators</strong> with stable commission and strong ops.</li>
-      <li><strong>Keep a gas buffer</strong> for claim/unstake/recovery actions.</li>
-      <li><strong>Review allowances periodically</strong> and revoke stale permissions.</li>
-      <li><strong>Track net yield</strong> (not just headline APY).</li>
+      <li><strong>Protocol TVL and adoption:</strong> broad health signals.</li>
+      <li><strong>stETH price vs ETH (peg/discount):</strong> matters when exiting via swaps.</li>
+      <li><strong>Liquidity depth:</strong> where your exit is safest for size.</li>
+      <li><strong>Wallet allowances:</strong> reduce approval risk over time.</li>
     </ul>
 
-    <div class="note">
-      <strong>Most common mistake:</strong> users optimize for +0.5% yield and ignore the 10× bigger risk: bad ops + bad security habits.
+    <div class="callout">
+      <strong>Pro habit:</strong> Maintain a tiny log: date, tx hash, action (stake/wrap/swap/withdraw),
+      token type, and notes. It makes audits and troubleshooting trivial.
     </div>
   </section>
 
   <section class="card" id="troubleshooting">
-    <h2>Staking Polygon Troubleshooting: Common Issues, Root Causes, Fixes</h2>
+    <h2>Lido Staking Troubleshooting: Common Issues, Root Causes, Fixes</h2>
 
-    <h3>“Rewards not showing”</h3>
+    <h3>“I staked but don’t see stETH”</h3>
     <ul>
-      <li>You’re viewing the wrong network/account in the wallet.</li>
-      <li>Rewards accrue but require a claim/refresh action in the UI.</li>
-      <li>Validator has downtime or reporting lag—check on-chain data if available.</li>
+      <li>Wrong network/account in wallet.</li>
+      <li>Token not imported (add token by verified contract address).</li>
+      <li>Tx pending/not confirmed—check the tx hash in a block explorer.</li>
     </ul>
 
-    <h3>“Can’t unstake / withdraw”</h3>
+    <h3>“My wstETH balance isn’t increasing”</h3>
     <ul>
-      <li>Unbonding period is active (wait until it completes).</li>
-      <li>There is a claim/finalize step you haven’t executed.</li>
-      <li>You don’t have enough gas for the exit transaction.</li>
+      <li>wstETH is typically non-rebasing: value increases via the exchange rate, not your token count.</li>
+      <li>Use the official tools/dashboards to see the current rate and value.</li>
     </ul>
 
-    <h3>“APY seems lower than expected”</h3>
+    <h3>“I can’t swap without huge slippage”</h3>
     <ul>
-      <li>Commission is higher than assumed.</li>
-      <li>Compounding is not happening (or fees make it not worth it).</li>
-      <li>Validator performance/uptime reduced realized rewards.</li>
+      <li>Market liquidity is thin or fragmented.</li>
+      <li>Trade size is too large for the pool—split into chunks.</li>
+      <li>Try a deeper venue/route; avoid trading during volatile spikes.</li>
+    </ul>
+
+    <h3>“Withdraw/unstake is taking longer than expected”</h3>
+    <ul>
+      <li>Queue/timing constraints can apply depending on network/protocol conditions.</li>
+      <li>Ensure you completed all steps (request + finalize/claim if required).</li>
     </ul>
 
     <div class="note">
-      <strong>Best debugging method:</strong> verify state from the chain / official dashboards first, then UI second.
-      UI can lag; on-chain data is the source of truth.
+      <strong>Best debugging method:</strong> verify on-chain first (explorer + official dashboards), UI second.
+      UIs can lag; chain data is the source of truth.
     </div>
   </section>
 
   <section class="eeat" id="eeat" aria-labelledby="eeat-title">
-    <h2 id="eeat-title">Staking Polygon: Authoritative Notes &amp; External References</h2>
+    <h2 id="eeat-title">Lido Staking: Authoritative Notes &amp; External References (2026)</h2>
     <p>
-      Replace placeholder links with your chosen authoritative sources. Keep this block “clean” (official docs, reputable security resources,
-      and dashboards) to strengthen EEAT.
+      Replace/extend this list if you have preferred sources. Keep it “clean” with official docs and reputable analytics/security references.
     </p>
 
-    <h3>Polygon / Staking</h3>
+    <h3>Official / documentation</h3>
     <ul>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon — Official Site</a></li>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon Staking — Official Docs</a></li>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon Validators — Explorer / Dashboard</a></li>
+      <li><a href="https://lido.fi/" target="_blank" rel="noopener nofollow">Lido — Official Website</a></li>
+      <li><a href="https://docs.lido.fi/" target="_blank" rel="noopener nofollow">Lido Docs — stETH / wstETH / protocol details</a></li>
+      <li><a href="https://ethereum.org/" target="_blank" rel="noopener nofollow">Ethereum.org — Staking &amp; network basics</a></li>
+    </ul>
+
+    <h3>Analytics / markets</h3>
+    <ul>
+      <li><a href="https://defillama.com/" target="_blank" rel="noopener nofollow">DeFiLlama — TVL / ecosystem context</a></li>
+      <li><a href="https://dune.com/" target="_blank" rel="noopener nofollow">Dune — dashboards (search Lido / stETH)</a></li>
+      <li><a href="https://etherscan.io/" target="_blank" rel="noopener nofollow">Etherscan — verify token contracts &amp; tx hashes</a></li>
+      <li><a href="https://beaconcha.in/" target="_blank" rel="noopener nofollow">beaconcha.in — Ethereum consensus tracking</a></li>
+      <li><a href="https://coinmarketcap.com/" target="_blank" rel="noopener nofollow">CoinMarketCap — market listings and references</a></li>
+      <li><a href="https://www.coingecko.com/" target="_blank" rel="noopener nofollow">CoinGecko — token markets and liquidity references</a></li>
     </ul>
 
     <h3>Security hygiene</h3>
@@ -820,92 +852,101 @@
     </ul>
 
     <div class="note">
-      <strong>About:</strong> Prepared by Crypto Finance Experts as a practical SEO-oriented knowledge base for <em>Staking Polygon (POL)</em>:
-      rewards, APY/APR, validators, calculator framework, safety, comparisons, and troubleshooting.
+      <strong>About:</strong> Prepared by Crypto Finance Experts as an SEO-oriented knowledge base for <em>Lido Staking</em>:
+      stETH/wstETH, rewards, fees, withdrawals, markets, safety, analytics, and troubleshooting.
     </div>
   </section>
 
   <section class="card faq-section" aria-labelledby="faq">
-    <h2 id="faq">Staking Polygon (POL): Frequently Asked Questions</h2>
+    <h2 id="faq">Lido Staking: Frequently Asked Questions</h2>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f1" id="b1">
-        <h3>What is Staking Polygon (POL) and how does it work?</h3><span class="faq-plus">+</span>
+        <h3>What is Lido Staking and how does it work?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f1" class="faq-content" role="region" aria-labelledby="b1">
-        <p><strong>Staking Polygon (POL)</strong> typically involves delegating POL to validators (or using a staking method that represents your stake) to earn rewards while supporting network operations.</p>
+        <p><strong>Lido Staking</strong> lets you stake ETH and receive <strong>stETH</strong>, a liquid representation of your staked position plus rewards. You can hold it, use it in DeFi, or exit via withdrawal or swapping depending on your needs.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f2" id="b2">
-        <h3>Polygon staking rewards: what affects my yield?</h3><span class="faq-plus">+</span>
+        <h3>What is stETH and why do people use it?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f2" class="faq-content" role="region" aria-labelledby="b2">
-        <p>Your net yield depends on gross rate, validator commission, validator performance/uptime, compounding behavior, and transaction costs for claim/compound/unstake actions.</p>
+        <p><strong>stETH</strong> represents staked ETH with rewards. People use it because it gives staking exposure while remaining tradable/usable in DeFi (subject to liquidity and market conditions).</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f3" id="b3">
-        <h3>Polygon staking APY / APR: which should I trust?</h3><span class="faq-plus">+</span>
+        <h3>stETH vs wstETH: which one should I hold?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f3" class="faq-content" role="region" aria-labelledby="b3">
-        <p>APR is a simple rate; APY assumes compounding. Trust the number that matches your actual compounding cadence and includes fees/commission in the net estimate.</p>
+        <p>Hold <strong>stETH</strong> for simplicity. Use <strong>wstETH</strong> when a DeFi app requires a non-rebasing token or for certain L2/DeFi integrations. Always verify you’re using the correct wrapper and token contract.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f4" id="b4">
-        <h3>How to stake Polygon (POL) safely?</h3><span class="faq-plus">+</span>
+        <h3>What fees does Lido charge?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f4" class="faq-content" role="region" aria-labelledby="b4">
-        <p>Use official links (bookmarks), consider a hardware wallet for size, delegate a small test first, choose reputable validators, and keep a gas buffer for exits and recovery actions.</p>
+        <p>There’s typically a <strong>protocol fee taken from staking rewards</strong>, plus <strong>gas costs</strong> for actions (stake/wrap/withdraw/swaps). If you exit via swaps, slippage/discount can be the biggest “hidden fee.”</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f5" id="b5">
-        <h3>Staking Polygon safe, legit, and trustworthy in 2026?</h3><span class="faq-plus">+</span>
+        <h3>How do I unstake or withdraw from Lido?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f5" class="faq-content" role="region" aria-labelledby="b5">
-        <p>Staking as a mechanism can be legitimate, but outcomes depend on method/provider risk, validator quality, and user security hygiene. Treat phishing and approvals as the top avoidable risks.</p>
+        <p>You generally exit either by <strong>withdrawing/redeeming</strong> through the protocol flow (time-based) or by <strong>swapping</strong> stETH/wstETH to ETH/stables (market-based). Choose based on urgency and liquidity/peg conditions.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f6" id="b6">
-        <h3>Polygon validator list: what matters most?</h3><span class="faq-plus">+</span>
+        <h3>Is Lido Staking safe in 2026?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f6" class="faq-content" role="region" aria-labelledby="b6">
-        <p>Look for stable commission, strong uptime/performance, transparency, and operational reputation. Avoid unknown operators offering eye-catching headline rates.</p>
+        <p>“Safe” depends on your risk tolerance. Key risks: <strong>smart-contract risk</strong>, <strong>liquidity/peg risk</strong> when swapping, and <strong>user mistakes</strong> (phishing/approvals). You can reduce user risk massively with bookmarks, limited approvals, and wallet separation.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f7" id="b7">
-        <h3>Staking Polygon vs liquid staking: which is better?</h3><span class="faq-plus">+</span>
+        <h3>Why is stETH sometimes below (or above) ETH?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f7" class="faq-content" role="region" aria-labelledby="b7">
-        <p>Native staking is simpler but less liquid; liquid staking may be more flexible but adds smart-contract and market liquidity/peg risks. Choose based on your need for fast exits.</p>
+        <p>stETH trades on markets with supply/demand and liquidity constraints. During stressed markets, it can trade at a discount (or premium). If you’re exiting via swaps, treat it like a market trade with execution risk.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f8" id="b8">
-        <h3>Polygon staking calculator: what inputs do I need?</h3><span class="faq-plus">+</span>
+        <h3>Why doesn’t my wstETH balance increase?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f8" class="faq-content" role="region" aria-labelledby="b8">
-        <p>Stake amount, gross APR, validator commission, compounding frequency, and transaction costs. The goal is a net yield estimate, not a marketing APY.</p>
+        <p>wstETH is typically non-rebasing. Your token count may stay the same while its <strong>exchange rate</strong> increases. Track value/rate using official dashboards and trusted tools.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f9" id="b9">
-        <h3>Why can’t I unstake or withdraw right now?</h3><span class="faq-plus">+</span>
+        <h3>What’s the best way to swap stETH to ETH with low slippage?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f9" class="faq-content" role="region" aria-labelledby="b9">
-        <p>Most commonly: an unbonding period is still running, a claim/finalize step is required, or you lack gas for the exit transaction.</p>
+        <p>Use deep liquidity venues, compare routes, and for size <strong>split into chunks</strong>. Do a small test first. Low slippage comes from depth and execution discipline, not from a single “magic” setting.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f10" id="b10">
+        <h3>What’s the top safety checklist for Lido users?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f10" class="faq-content" role="region" aria-labelledby="b10">
+        <p>Bookmark official sites, verify token contracts, use a dedicated interaction wallet, limit approvals, test small first, keep a gas buffer, and revoke old allowances periodically.</p>
       </div>
     </div>
 
@@ -914,21 +955,41 @@
 </main>
 
 <footer class="container" role="contentinfo" style="padding:2rem 0; border-top:1px solid var(--line); margin-top:2rem">
-  <p class="muted">© 2026 Staking Polygon (POL) Guide. Educational content with safety-first operational focus.</p>
+  <p class="muted">© 2026 Lido Staking Guide. Educational content with safety-first operational focus.</p>
 </footer>
 
+<script>
+  // FAQ accordion (accessible)
+  (function(){
+    var buttons = document.querySelectorAll('.faq-button');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var controls = btn.getAttribute('aria-controls');
+        var panel = document.getElementById(controls);
+        if(!panel) return;
 
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
 
+        // close all
+        buttons.forEach(function(b){
+          b.setAttribute('aria-expanded','false');
+          var c = b.getAttribute('aria-controls');
+          var p = document.getElementById(c);
+          if(p){
+            p.style.maxHeight = null;
+            p.classList.remove('open');
+          }
+        });
 
+        if(!isOpen){
+          btn.setAttribute('aria-expanded','true');
+          panel.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
 
-
-
-
-
-
-
-
-
-
-
-</body></html>
+</body>
+</html>
